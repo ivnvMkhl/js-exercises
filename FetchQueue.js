@@ -6,15 +6,13 @@ url с рандомным ответом: https://ff-exercises-api.glitch.me/ran
 
 const customFetch = async () => {};
 
-console.log(
-    customFetch('https://ff-exercises-api.glitch.me/random-error-response')
-        .then((response) => {
-            if (response.status >= 300) {
-                throw new Error('Ошибка');
-            } else {
-                return response.json();
-            }
-        })
-        .catch((error) => console.error(error))
-        .then((json) => console.log(json)),
-);
+customFetch('https://ff-exercises-api.glitch.me/random-error-response')
+    .then((response) => {
+        if (response.status >= 300) {
+            throw new Error('Ошибка');
+        } else {
+            return response.json();
+        }
+    })
+    .catch((error) => console.error(error))
+    .then((json) => console.log(json));
